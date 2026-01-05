@@ -1,0 +1,27 @@
+import React from "react";
+import Header from "./Header";
+import ProfileCard from "./ProfileCard";
+import ExperienceCard from "./ExperienceCard";
+import SkillsCard from "./SkillsCard";
+import ProjectGallery from "./ProjectGallery/ProjectGallery";
+
+interface LayoutProps {
+  readonly children: React.ReactNode;
+}
+export default function Layout({ children }: LayoutProps) {
+  return (
+    <div className="flex flex-col min-h-screen bg-background bg-gradient-parent text-foreground transition-colors duration-300">
+      <Header />
+      <section className="p-3 grid md:grid-cols-12 gap-3 w-full h-[calc(100dvh - 80px)]">
+        <section className="w-full md:col-span-4 space-y-3">
+          <ProfileCard />
+          <SkillsCard />
+        </section>
+        <section className="w-full md:col-span-8 space-y-3">
+          <ExperienceCard />
+          <ProjectGallery/>
+        </section>
+      </section>
+    </div>
+  );
+}

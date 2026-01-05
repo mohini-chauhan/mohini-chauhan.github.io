@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+/* Tailwind v4 dark mode setup */
+@layer base {
+	:root {
+		--background: 255 255 255;
+		--foreground: 105 106 100;
+		--border: 229 231 235;
+		--gradient-custom: linear-gradient(66deg, rgba(229, 229, 231, 1) 31%, rgba(249, 239, 198, 1) 72%);
+		--card-background: #fcfaf3;
+		--button-background: #FFD960;
+		--button-border: #FFD960;
+		--button-foreground: #604E08;
+		--chart-color-1: #FFD960;
+		--chart-color-2: #f38686;
+		--chart-color-3: #84cbc6;
+		--chart-color-4: #23778a;
+		--chart-color-5: #96CEB4;
+	}
+	.dark {
+		--background: 17 24 39;
+		--foreground: 135 136 140;
+		--header-foreground: 255 255 255;
+		--border: 55 65 81;
+		--gradient-custom: linear-gradient(73deg,rgba(55, 54, 77, 1) 18%, rgba(24, 24, 32, 1) 81%);
+		--card-background: #0c0e0f;
+		--button-background: #3B3534;
+		--button-border: #fcb859;
+		--button-foreground: #fcb859;
+		--chart-color-1: #FFD960;
+		--chart-color-2: #FF6B6B;
+		--chart-color-3: #4ECDC4;
+		--chart-color-4: #8330E3;
+		--chart-color-5: #96CEB4;
+	}
+	body, html {
+		background-color: rgb(var(--background));
+		color: rgb(var(--foreground));
+		font-family: 'Inter', sans-serif;
+	}
+	h4 {
+		@apply text-2xl font-semibold;
+	}
+	p {
+		@apply text-base;
+	}
+}
+
+@layer utilities {
+	.bg-background {
+		background-color: rgb(var(--background));
+	}
+	.text-foreground {
+		color: rgb(var(--foreground));
+	}
+	.border-border {
+		border-color: rgb(var(--border));
+	}
+	.bg-gradient-parent {
+        background: var(--gradient-custom);
+    }
+	.bg-background-card{
+		background: var(--card-background);
+	}
+	.bg-background-button{
+		background: var(--button-background);
+	}
+	.border-border-button{
+		border-color: var(--button-border);
+	}
+	.text-foreground-button{
+		color: var(--button-foreground);
+	}
+	.header-foreground{
+		color: rgb(var(--header-foreground));
+	}
+}
+
+
