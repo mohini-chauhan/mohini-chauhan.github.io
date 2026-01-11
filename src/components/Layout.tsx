@@ -10,7 +10,7 @@ interface LayoutProps {
 }
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="flex flex-col min-h-screen bg-background bg-gradient-parent text-foreground transition-colors duration-300">
+    <div className="min-h-screen bg-background bg-gradient-parent text-foreground transition-colors duration-300">
       <Header />
       <section className="p-3 grid md:grid-cols-12 gap-3 w-full h-[calc(100dvh - 80px)]">
         <section className="w-full md:col-span-4 space-y-3">
