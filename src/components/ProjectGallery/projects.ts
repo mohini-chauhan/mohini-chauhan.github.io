@@ -11,27 +11,27 @@ import frugal from "../../assets/Frugal analytics.png";
 export const ProjectData = [
   {
     id: 1,
+    title: "Unikaksha",
+    img: unikaksha,
+    link: "https://fir-unikaksha.web.app/",
+  },
+  {
+    id: 2,
+    title: "Smarter Code",
+    img: smarterCode,
+    link: "https://smartercode-d5499.web.app/",
+  },
+  {
+    id: 3,
     title: "Hiking site",
     img: hikingSite,
     link: "https://exploringhikes.netlify.app/",
   },
   {
-    id: 2,
-    title: "Unikaksha",
-    img: unikaksha,
-    link: "https://fir-unikaksha.web.app/"
-  },
-  {
-    id: 3,
-    title: "React Widgets",
-    img: reactWidgets,
-    link: "https://github.com/mohini-chauhan/React-widgets?tab=readme-ov-file"
-  },
-  {
     id: 4,
-    title: "Smarter Code",
-    img: smarterCode,
-    link: "https://smartercode-d5499.web.app/"
+    title: "Frugal analytics",
+    img: frugal,
+    link: "https://codepen.io/Mohinii/full/NWpzgLb",
   },
   {
     id: 5,
@@ -59,8 +59,8 @@ export const ProjectData = [
   },
   {
     id: 9,
-    title: "Frugal analytics",
-    img: frugal,
-    link: "https://codepen.io/Mohinii/full/NWpzgLb",  
+    title: "React Widgets",
+    img: reactWidgets,
+    link: "https://github.com/mohini-chauhan/React-widgets?tab=readme-ov-file",
   },
 ] as const;

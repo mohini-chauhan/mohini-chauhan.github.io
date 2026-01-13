@@ -4,6 +4,7 @@ import ProfileCard from "./ProfileCard";
 import ExperienceCard from "./ExperienceCard";
 import SkillsCard from "./SkillsCard";
 import ProjectGallery from "./ProjectGallery/ProjectGallery";
+import Certifications from "@/Certifications/Certifications";
 
 interface LayoutProps {
   readonly children: React.ReactNode;
@@ -16,6 +17,7 @@ export default function Layout({ children }: LayoutProps) {
         <section className="w-full md:col-span-4 space-y-3">
           <ProfileCard />
           <SkillsCard />
+          <Certifications/>
         </section>
         <section className="w-full md:col-span-8 space-y-3">
           <ExperienceCard />
