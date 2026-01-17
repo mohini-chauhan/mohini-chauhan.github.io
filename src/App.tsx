@@ -5,9 +5,7 @@ import './index.css';
 export function App() {
   return (
     <ThemeProvider>
-      <Layout>
-        hello
-      </Layout>
+      <Layout/>
     </ThemeProvider>
   );
 }
