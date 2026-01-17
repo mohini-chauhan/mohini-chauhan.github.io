@@ -1,12 +1,9 @@
 import hikingSite from "../../assets/Hiking site.png";
 import unikaksha from "../../assets/Unikaksha.png";
-import reactWidgets from "../../assets/Widget.png";
-import smarterCode from "../../assets/Smarter code.png";
-import techDoc from "../../assets/tech doc.png";
+import smarterCode from "../../assets/SmarterCodes.png";
 import virtualKitchen from "../../assets/virtual kitchen.png";
-import profileSample from "../../assets/profileSample.png";
-import productLanding from "../../assets/product landing.png";
-import frugal from "../../assets/Frugal analytics.png";
+import Skiddos from "../../assets/Skiddos.png";
+import Library from "../../assets/library.png";
 
 export const ProjectData = [
   {
@@ -29,38 +26,20 @@ export const ProjectData = [
   },
   {
     id: 4,
-    title: "Frugal analytics",
-    img: frugal,
-    link: "https://codepen.io/Mohinii/full/NWpzgLb",
+    title: "Skiddos",
+    img: Skiddos,
+    link: "https://skiddos-demo.netlify.app/"
   },
   {
     id: 5,
-    title: "Technical Documentation",
-    img: techDoc,
-    link: "https://codepen.io/Mohinii/pen/NWpLjEO",
+    title: "Library site",
+    img: Library,
+    link: "https://library-management-1aefd.web.app/home",
   },
   {
     id: 6,
     title: "Virtual Kitchen",
     img: virtualKitchen,
     link: "https://codepen.io/Mohinii/pen/OJmEeVR",
-  },
-  {
-    id: 7,
-    title: "Portfolio Website",
-    img: profileSample,
-    link: "https://codepen.io/Mohinii/pen/vYxzada",
-  },
-  {
-    id: 8,
-    title: "Product Landing",
-    img: productLanding,
-    link: "https://codepen.io/Mohinii/full/VwpBLNQ",
-  },
-  {
-    id: 9,
-    title: "React Widgets",
-    img: reactWidgets,
-    link: "https://github.com/mohini-chauhan/React-widgets?tab=readme-ov-file",
   },
 ] as const;
