@@ -10,7 +10,7 @@ const RadarChart: React.FC<RadarChartProps> = ({ data, options, className = '' }
   const chartOptions = createRadarChartOptions(options);
 
   return (
-    <div className={`relative h-[260px] w-full ${className}`}>
+    <div className={`relative h-[291px] w-full ${className}`}>
       <Radar data={data} options={chartOptions} />
     </div>
   );
