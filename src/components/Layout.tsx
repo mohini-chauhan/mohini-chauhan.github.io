@@ -4,12 +4,9 @@ import ProfileCard from "./ProfileCard";
 import ExperienceCard from "./ExperienceCard";
 import SkillsCard from "./SkillsCard";
 import ProjectGallery from "./ProjectGallery/ProjectGallery";
-import Certifications from "@/Certifications/Certifications";
+import Footer from "./Footer";
 
-interface LayoutProps {
-  readonly children: React.ReactNode;
-}
-export default function Layout({ children }: LayoutProps) {
+export default function Layout() {
   return (
     <div className="min-h-screen bg-background bg-gradient-parent text-foreground transition-colors duration-300">
       <Header />
@@ -17,13 +14,14 @@ export default function Layout({ children }: LayoutProps) {
         <section className="w-full md:col-span-4 space-y-3">
           <ProfileCard />
           <SkillsCard />
-          <Certifications/>
+          {/* <Certifications/> */}
         </section>
         <section className="w-full md:col-span-8 space-y-3">
           <ExperienceCard />
           <ProjectGallery/>
         </section>
       </section>
+      <Footer/>
     </div>
   );
 }
