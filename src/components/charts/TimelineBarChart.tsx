@@ -86,20 +86,26 @@ const TimelineBarChart: React.FC<TimelineBarChartProps> = ({
         return "";
       },
       label: (context: any) => {
-        const index = context.dataIndex;
-        if (index !== undefined && parsedExperiences[index]) {
-          const exp = parsedExperiences[index];
-          const start = exp.startYear;
-          const end = exp.endYear === "Present" ? "Present" : exp.endYear;
-          const duration = calculateDuration(exp.startDate, exp.endDate);
-          const durationText = formatDurationText(duration.years, duration.months);
-          return [
-            `Duration: ${durationText} (${start} - ${end})`,
-            ...(exp.description ? [exp.description] : []),
-          ];
-        }
-        return [];
-      },
+      const index = context.dataIndex;
+      if (index !== undefined && parsedExperiences[index]) {
+        const exp = parsedExperiences[index];
+        const start = exp.startYear;
+        const end = exp.endYear === "Present" ? "Present" : exp.endYear;
+        const duration = calculateDuration(exp.startDate, exp.endDate);
+        const durationText = formatDurationText(duration.years, duration.months);
+
+        // Split description by newlines and filter out empty lines
+        const descriptionLines = exp.description
+          ? exp.description.split('\n').filter(line => line.trim() !== '')
+          : [];
+
+        return [
+          `Duration: ${durationText} (${start} - ${end})`,
+          ...descriptionLines
+        ];
+      }
+      return [];
+    },
     },
     backgroundColor:
       theme === "dark" ? "rgba(0, 0, 0, 0.9)" : "rgba(255, 255, 255, 0.9)",
