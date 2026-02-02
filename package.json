@@ -15,6 +15,7 @@
     "@lottiefiles/react-lottie-player": "^3.6.0",
     "bun-plugin-tailwind": "^0.1.2",
     "chart.js": "^4.5.1",
+    "chartjs-chart-treemap": "^3.1.0",
     "chartjs-plugin-datalabels": "^2.2.0",
     "framer-motion": "^12.26.2",
     "gh-pages": "^6.3.0",
