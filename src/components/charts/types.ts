@@ -31,5 +31,6 @@ export interface ExperienceData {
   startYear: string;
   endYear: string | 'Present';
   role: string;
+  highlights?: string[];
   description?: string;
 }
