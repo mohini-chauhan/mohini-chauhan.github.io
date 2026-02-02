@@ -76,4 +76,59 @@
 	}
 }
 
+/* Animated border effect */
+@property --border-angle {
+	syntax: "<angle>";
+	initial-value: 0deg;
+	inherits: false;
+}
+
+.card-border-animate {
+	position: relative;
+	background: var(--card-background);
+	border-radius: 0.75rem;
+}
+
+.card-border-animate::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+	padding: 2px;
+	background: conic-gradient(
+		from var(--border-angle) at 100% 0%,
+		transparent 0%,
+		transparent 25%,
+		var(--chart-color-1) 30%,
+		var(--chart-color-3) 50%,
+		var(--chart-color-1) 70%,
+		transparent 75%,
+		transparent 100%
+	);
+	-webkit-mask:
+		linear-gradient(#fff 0 0) content-box,
+		linear-gradient(#fff 0 0);
+	mask:
+		linear-gradient(#fff 0 0) content-box,
+		linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.card-border-animate:hover::before {
+	opacity: 1;
+	animation: border-rotate 2s linear forwards;
+}
+
+@keyframes border-rotate {
+	0% {
+		--border-angle: 0deg;
+	}
+	100% {
+		--border-angle: 360deg;
+	}
+}
+
 
