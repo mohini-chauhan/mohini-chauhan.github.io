@@ -154,6 +154,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chartjs-chart-treemap@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "chartjs-chart-treemap@npm:3.1.0"
+  peerDependencies:
+    chart.js: ">=3.0.0"
+  checksum: 10c0/42e176f4d63013de34aa06e931a76c0ab02de58e2196397c2aafdb14b08f502114fac3ebff1dcafffcf8b5c326a3a4defd4ecab3159d3c0a6e9a3e1e9ee6c075
+  languageName: node
+  linkType: hard
+
 "chartjs-plugin-datalabels@npm:^2.2.0":
   version: 2.2.0
   resolution: "chartjs-plugin-datalabels@npm:2.2.0"
@@ -455,6 +464,7 @@ __metadata:
     "@types/react-dom": "npm:^19"
     bun-plugin-tailwind: "npm:^0.1.2"
     chart.js: "npm:^4.5.1"
+    chartjs-chart-treemap: "npm:^3.1.0"
     chartjs-plugin-datalabels: "npm:^2.2.0"
     framer-motion: "npm:^12.26.2"
     gh-pages: "npm:^6.3.0"

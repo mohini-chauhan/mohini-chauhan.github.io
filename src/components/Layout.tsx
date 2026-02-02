@@ -8,20 +8,21 @@ import Footer from "./Footer";
 
 export default function Layout() {
   return (
-    <div className="min-h-screen bg-background bg-gradient-parent text-foreground transition-colors duration-300">
+    <>
       <Header />
-      <section className="p-3 grid md:grid-cols-12 gap-3 w-full h-[calc(100dvh - 80px)]">
-        <section className="w-full md:col-span-4 space-y-3">
+      <div className="min-h-screen w-full max-w-[100vw] bg-background bg-gradient-parent text-foreground transition-colors duration-300 overflow-x-hidden">
+        <main className="px-2 xs:px-3 pt-[4.5rem] pb-12 grid lg:grid-cols-12 gap-2 xs:gap-3 w-full max-w-full overflow-hidden">
+        <section className="w-full min-w-0 lg:col-span-4 flex flex-col gap-2 xs:gap-3">
           <ProfileCard />
           <SkillsCard />
-          {/* <Certifications/> */}
         </section>
-        <section className="w-full md:col-span-8 space-y-3">
+        <section className="w-full min-w-0 lg:col-span-8 flex flex-col gap-2 xs:gap-3">
           <ExperienceCard />
-          <ProjectGallery/>
+          <ProjectGallery />
         </section>
-      </section>
-      <Footer/>
-    </div>
+      </main>
+        <Footer/>
+      </div>
+    </>
   );
 }

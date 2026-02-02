@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Custom breakpoints */
+@theme {
+  --breakpoint-xs: 400px;
+}
+
 /* Tailwind v4 dark mode setup */
 @layer base {
 	:root {
@@ -33,10 +38,30 @@
 		--chart-color-4: #8330E3;
 		--chart-color-5: #96CEB4;
 	}
+	*, *::before, *::after {
+		box-sizing: border-box;
+	}
 	body, html {
 		background-color: rgb(var(--background));
 		color: rgb(var(--foreground));
 		font-family: 'Inter', sans-serif;
+		overflow-x: hidden;
+		max-width: 100%;
+		width: 100%;
+	}
+	#root {
+		max-width: 100%;
+		width: 100%;
+	}
+	/* Prevent overflow on small screens */
+	* {
+		min-width: 0;
+	}
+	@media (max-width: 400px) {
+		p, span, h1, h2, h3, h4, h5, h6 {
+			word-wrap: break-word;
+			overflow-wrap: break-word;
+		}
 	}
 	h4 {
 		@apply text-2xl font-semibold;

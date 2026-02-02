@@ -6,8 +6,8 @@ export default function Header() {
 
 
   return (
-    <header className="h-14 flex items-center gap-4 px-3.5 py-2 border-b border-border">
-      <h1 className="text-xl font-bold header-foreground">
+    <header className="fixed top-0 left-0 right-0 z-50 h-14 flex items-center justify-between gap-2 px-2 xs:px-3.5 py-2 border-b border-border bg-background/80 backdrop-blur-md">
+      <h1 className="text-lg xs:text-xl font-bold header-foreground">
         Glad You’re Here{" "}
         <motion.span
           className="inline-block origin-bottom-right"

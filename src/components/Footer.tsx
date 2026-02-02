@@ -22,7 +22,7 @@ export default function Footer() {
       <div className="container mx-auto flex justify-between items-center">
         
         {/* Left: Copyright */}
-        <p className="text-xs text-muted-foreground">
+        <p className="text-[10px] xs:text-xs text-muted-foreground">
           © 2026 • Designed & Built by Mohini Chauhan
         </p>
 
