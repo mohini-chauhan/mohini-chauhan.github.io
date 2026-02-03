@@ -29,7 +29,7 @@ const TimelineBarChart: React.FC<TimelineBarChartProps> = ({
   options,
   className = "",
 }) => {
-  const { theme } = useTheme();
+  const { theme, isDarkMode } = useTheme();
 
   // Parse all dates and calculate min/max years for scaling
   const parsedExperiences = experiences.map(exp => ({
@@ -108,11 +108,11 @@ const TimelineBarChart: React.FC<TimelineBarChartProps> = ({
     },
     },
     backgroundColor:
-      theme === "dark" ? "rgba(0, 0, 0, 0.9)" : "rgba(255, 255, 255, 0.9)",
-    titleColor: theme === "dark" ? "white" : "black",
-    bodyColor: theme === "dark" ? "white" : "black",
+      isDarkMode ? "rgba(0, 0, 0, 0.9)" : "rgba(255, 255, 255, 0.9)",
+    titleColor: isDarkMode ? "white" : "black",
+    bodyColor: isDarkMode ? "white" : "black",
     borderColor:
-      theme === "dark" ? "rgba(255, 255, 255, 0.2)" : "rgba(0, 0, 0, 0.2)",
+      isDarkMode ? "rgba(255, 255, 255, 0.2)" : "rgba(0, 0, 0, 0.2)",
     borderWidth: 1,
   };
 
@@ -164,12 +164,12 @@ const TimelineBarChart: React.FC<TimelineBarChartProps> = ({
         max: maxYear,
         grid: {
           color:
-            theme === "dark"
+            isDarkMode
               ? "rgba(255, 255, 255, 0.1)"
               : "rgba(0, 0, 0, 0.1)",
         },
         ticks: {
-          color: theme === "dark" ? "rgb(135, 136, 140)" : "rgb(105 106 100)",
+          color: isDarkMode ? "rgb(148, 163, 184)" : "rgb(105 106 100)",
           stepSize: 1,
           callback: (tickValue: string | number) =>
             Math.floor(Number(tickValue)).toString(),
@@ -177,7 +177,7 @@ const TimelineBarChart: React.FC<TimelineBarChartProps> = ({
         title: {
           display: true,
           text: "Years",
-          color: theme === "dark" ? "rgb(135, 136, 140)" : "rgb(105 106 100)",
+          color: isDarkMode ? "rgb(148, 163, 184)" : "rgb(105 106 100)",
         },
       },
       y: {
@@ -185,12 +185,12 @@ const TimelineBarChart: React.FC<TimelineBarChartProps> = ({
           display: false,
         },
         ticks: {
-          color: theme === "dark" ? "rgb(135, 136, 140)" : "rgb(105 106 100)",
+          color: isDarkMode ? "rgb(148, 163, 184)" : "rgb(105 106 100)",
         },
         title: {
           display: true,
           text: "Company",
-          color: theme === "dark" ? "rgb(135, 136, 140)" : "rgb(105 106 100)",
+          color: isDarkMode ? "rgb(148, 163, 184)" : "rgb(105 106 100)",
         },
       },
     },

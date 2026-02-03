@@ -61,7 +61,7 @@ export default function SkillsCard() {
       <div className="h-[300px] xs:h-[380px] lg:h-[403px] w-full overflow-hidden">
         <TreemapChart
           skillCategories={skillCategories}
-          theme={theme as 'light' | 'dark'}
+          theme={theme}
           className="h-full"
         />
       </div>

@@ -65,8 +65,9 @@ const experiences: ExperienceData[] = [
   },
 ];
 
-// Color palette for experience
-const experienceColors = ['#FFD960', '#FF6B6B', '#4ECDC4'];
+// Color palette for experience - darker shades for light mode readability
+const experienceColorsDark = ['#FFD960', '#FF6B6B', '#4ECDC4'];
+const experienceColorsLight = ['#713F12', '#991B1B', '#115E59'];
 
 // Key metrics to highlight (dashboard style)
 const keyMetrics = [
@@ -77,7 +78,7 @@ const keyMetrics = [
 ];
 
 export default function ExperienceCard() {
-  const { theme } = useTheme();
+  const { isDarkMode } = useTheme();
 
   return (
     <Card className="p-3 xs:p-4" animateBorder>
@@ -89,7 +90,7 @@ export default function ExperienceCard() {
           <div
             key={metric.label}
             className={`flex items-center gap-1.5 px-2 py-1 rounded-lg ${
-              theme === 'dark' ? 'bg-gray-800/60' : 'bg-gray-50'
+              isDarkMode ? 'bg-white/5' : 'bg-amber-100/50'
             }`}
           >
             <span
@@ -98,7 +99,7 @@ export default function ExperienceCard() {
             >
               {metric.value}
             </span>
-            <span className="text-[10px] text-gray-500">{metric.label}</span>
+            <span className={`text-[10px] ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>{metric.label}</span>
           </div>
         ))}
       </div>
@@ -112,20 +113,20 @@ export default function ExperienceCard() {
           <div
             key={exp.company}
             className={`rounded-lg overflow-hidden ${
-              theme === 'dark' ? 'bg-gray-800/50' : 'bg-gray-50'
+              isDarkMode ? 'bg-white/5' : 'bg-amber-100/40'
             }`}
           >
             {/* Color accent bar */}
             <div
               className="h-1"
-              style={{ backgroundColor: experienceColors[index] }}
+              style={{ backgroundColor: experienceColorsDark[index] }}
             />
             <div className="p-3">
               {/* Role & Company */}
               <h5 className="font-semibold text-sm">{exp.role}</h5>
               <p
                 className="text-xs mb-2"
-                style={{ color: experienceColors[index] }}
+                style={{ color: isDarkMode ? experienceColorsDark[index] : experienceColorsLight[index] }}
               >
                 @ {exp.company}
               </p>
@@ -134,7 +135,7 @@ export default function ExperienceCard() {
                 {exp.highlights?.map((highlight: string, i: number) => (
                   <li key={i} className="text-xs flex items-start gap-1.5">
                     <span className="text-green-500 shrink-0">✓</span>
-                    <span className={theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}>
+                    <span className={isDarkMode ? 'text-gray-400' : 'text-gray-600'}>
                       {highlight}
                     </span>
                   </li>

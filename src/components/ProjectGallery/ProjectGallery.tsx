@@ -18,7 +18,7 @@ const itemVariants = {
 };
 
 export default function ProjectGallery() {
-  const { theme } = useTheme();
+  const { isDarkMode } = useTheme();
 
   return (
     <Card className="p-3 xs:p-4 h-full" animateBorder>
@@ -48,12 +48,12 @@ export default function ProjectGallery() {
             }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
             className={`group rounded-xl overflow-hidden cursor-pointer ${
-              theme === 'dark'
-                ? 'bg-gray-800/60'
-                : 'bg-gradient-to-br from-gray-50 to-white'
+              isDarkMode
+                ? 'bg-white/5'
+                : 'bg-amber-100/40'
             }`}
             style={{
-              border: `1px solid ${theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.08)'}`,
+              border: `1px solid ${isDarkMode ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.08)'}`,
             }}
           >
             {/* Colored Accent Bar */}
@@ -68,7 +68,7 @@ export default function ProjectGallery() {
               <div className="flex items-center justify-between mb-2">
                 <h5
                   className="font-semibold text-sm"
-                  style={{ color: theme === 'dark' ? project.color : undefined }}
+                  style={{ color: isDarkMode ? project.color : undefined }}
                 >
                   {project.title}
                 </h5>
@@ -86,9 +86,9 @@ export default function ProjectGallery() {
                   <span
                     key={tech}
                     className={`px-1.5 py-0.5 text-[10px] rounded font-medium ${
-                      theme === 'dark'
-                        ? 'bg-gray-700/80 text-gray-400'
-                        : 'bg-gray-100 text-gray-600'
+                      isDarkMode
+                        ? 'bg-white/10 text-gray-300'
+                        : 'bg-amber-200/50 text-amber-800'
                     }`}
                   >
                     {tech}
@@ -105,7 +105,7 @@ export default function ProjectGallery() {
                       className="text-[11px] flex items-start gap-1"
                     >
                       <span className="text-green-500 shrink-0">✓</span>
-                      <span className={theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}>
+                      <span className={isDarkMode ? 'text-gray-400' : 'text-gray-600'}>
                         {highlight}
                       </span>
                     </li>

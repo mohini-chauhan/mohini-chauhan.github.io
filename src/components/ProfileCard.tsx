@@ -5,7 +5,7 @@ import Button from "./Button";
 import { useTheme } from "../context/ThemeContext";
 
 export default function ProfileCard() {
-  const { theme } = useTheme();
+  const { isDarkMode } = useTheme();
 
   const handleDownloadResume = () => {
     const link = document.createElement("a");
@@ -56,14 +56,14 @@ export default function ProfileCard() {
             Open to Work
           </span>
           <span className={`px-1.5 py-0.5 text-[10px] xs:text-xs font-medium rounded-full ${
-            theme === "dark"
+            isDarkMode
               ? "bg-blue-500/20 text-blue-300"
               : "bg-blue-50 text-blue-700"
           }`}>
             Remote
           </span>
           <span className={`px-1.5 py-0.5 text-[10px] xs:text-xs font-medium rounded-full ${
-            theme === "dark"
+            isDarkMode
               ? "bg-purple-500/20 text-purple-300"
               : "bg-purple-50 text-purple-700"
           }`}>

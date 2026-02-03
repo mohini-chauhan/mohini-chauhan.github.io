@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { useTheme } from "../context/ThemeContext";
 
 export default function Toggle() {
-  const { theme, toggleTheme } = useTheme();
-  const isDark = theme === "dark";
+  const { toggleTheme, isDarkMode } = useTheme();
+  const isDark = isDarkMode;
   return (
     <button
       onClick={toggleTheme}
@@ -38,7 +38,7 @@ export default function Toggle() {
       >
         {/* Icon */}
         <motion.span
-          key={theme}
+          key={isDark ? "dark" : "light"}
           initial={{ scale: 0, rotate: -90 }}
           animate={{ scale: 1, rotate: 0 }}
           transition={{ type: "spring", stiffness: 400 }}

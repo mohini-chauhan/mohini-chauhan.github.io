@@ -67,7 +67,9 @@ const squarify = (
     let splitIndex = 0;
 
     for (let i = 0; i < sorted.length; i++) {
-      const itemValue = sorted[i].proficiency * sorted[i].techs.length;
+      const item = sorted[i];
+      if (!item) continue;
+      const itemValue = item.proficiency * item.techs.length;
       if (group1Value + itemValue <= halfTotal || i === 0) {
         group1Value += itemValue;
         splitIndex = i + 1;
@@ -100,6 +102,7 @@ const squarify = (
 
 const TreemapChart: React.FC<TreemapChartProps> = ({ skillCategories, theme, className = '' }) => {
   const layoutItems = squarify(skillCategories, 0, 0, 100, 100);
+  const isDark = theme !== 'light';
 
   return (
     <div className={`relative w-full h-full ${className}`}>
@@ -123,25 +126,25 @@ const TreemapChart: React.FC<TreemapChartProps> = ({ skillCategories, theme, cla
             <div
               className="w-full h-full rounded-lg p-2.5 flex flex-col transition-all duration-200 shadow-sm group-hover:shadow-md"
               style={{
-                backgroundColor: theme === 'dark'
+                backgroundColor: isDark
                   ? `${item.data.color}60`
                   : `${item.data.color}`,
-                border: `1px solid ${theme === 'dark' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.5)'}`,
+                border: `1px solid ${isDark ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.5)'}`,
               }}
             >
               {/* Category Label */}
               <div className="flex items-center justify-between mb-1">
                 <span
                   className="font-bold text-[11px] leading-tight truncate"
-                  style={{ color: theme === 'dark' ? '#fff' : '#1a1a1a' }}
+                  style={{ color: isDark ? '#fff' : '#1a1a1a' }}
                 >
                   {item.data.label}
                 </span>
                 <span
                   className="text-[9px] font-semibold px-1.5 py-0.5 rounded-full"
                   style={{
-                    backgroundColor: theme === 'dark' ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.6)',
-                    color: theme === 'dark' ? '#e5e7eb' : '#374151',
+                    backgroundColor: isDark ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.6)',
+                    color: isDark ? '#e5e7eb' : '#374151',
                   }}
                 >
                   {item.data.proficiency}/10
@@ -155,8 +158,8 @@ const TreemapChart: React.FC<TreemapChartProps> = ({ skillCategories, theme, cla
                     key={tech}
                     className="px-1.5 py-0.5 text-[9px] rounded-md font-medium truncate"
                     style={{
-                      backgroundColor: theme === 'dark' ? 'rgba(0,0,0,0.35)' : 'rgba(255,255,255,0.7)',
-                      color: theme === 'dark' ? '#f3f4f6' : '#1f2937',
+                      backgroundColor: isDark ? 'rgba(0,0,0,0.35)' : 'rgba(255,255,255,0.7)',
+                      color: isDark ? '#f3f4f6' : '#1f2937',
                       maxWidth: '100%',
                     }}
                   >

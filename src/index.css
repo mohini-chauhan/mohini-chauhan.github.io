@@ -22,21 +22,22 @@
 		--chart-color-4: #23778a;
 		--chart-color-5: #96CEB4;
 	}
+	/* Dark Theme - Warm Amber (Accessible) */
 	.dark {
-		--background: 17 24 39;
-		--foreground: 135 136 140;
-		--header-foreground: 255 255 255;
-		--border: 55 65 81;
-		--gradient-custom: linear-gradient(73deg,rgba(55, 54, 77, 1) 18%, rgba(24, 24, 32, 1) 81%);
-		--card-background: #242535;
-		--button-background: #3B3534;
-		--button-border: #fcb859;
-		--button-foreground: #fcb859;
-		--chart-color-1: #FFD960;
-		--chart-color-2: #FF6B6B;
-		--chart-color-3: #4ECDC4;
-		--chart-color-4: #8330E3;
-		--chart-color-5: #96CEB4;
+		--background: 15 23 42;
+		--foreground: 203 213 225;
+		--header-foreground: 248 250 252;
+		--border: 51 65 85;
+		--gradient-custom: linear-gradient(73deg, rgba(51, 33, 15, 1) 18%, rgba(15, 23, 42, 1) 81%);
+		--card-background: #1E293B;
+		--button-background: #422006;
+		--button-border: #F59E0B;
+		--button-foreground: #FCD34D;
+		--chart-color-1: #FBBF24;
+		--chart-color-2: #F87171;
+		--chart-color-3: #2DD4BF;
+		--chart-color-4: #A78BFA;
+		--chart-color-5: #4ADE80;
 	}
 	*, *::before, *::after {
 		box-sizing: border-box;
