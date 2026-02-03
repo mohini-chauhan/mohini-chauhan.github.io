@@ -24,7 +24,7 @@ export const ProjectData: Project[] = [
     title: "Smarter Code",
     description: "Interactive code learning platform with live code editor and progressive skill-building modules.",
     techStack: ["React", "Firebase", "CSS3"],
-    highlights: ["Code Editor", "Progress Tracking", "User Auth"],
+    highlights: ["Mobile-first design", "Animation", "User Auth"],
     link: "https://smartercode-d5499.web.app/",
     color: "#FF6B6B"
   },
@@ -32,8 +32,8 @@ export const ProjectData: Project[] = [
     id: 3,
     title: "Hiking Explorer",
     description: "Travel discovery app showcasing hiking trails with beautiful imagery and location details.",
-    techStack: ["React", "Netlify", "Responsive Design"],
-    highlights: ["Image Gallery", "Mobile-First", "Fast Loading"],
+    techStack: ["React", "Netlify", "Mobile-first design"],
+    highlights: ["Image Gallery", "Mobile-First Design", "Fast Loading"],
     link: "https://exploringhikes.netlify.app/",
     color: "#4ECDC4"
   },
@@ -42,7 +42,7 @@ export const ProjectData: Project[] = [
     title: "Skiddos",
     description: "Kid-friendly educational platform with engaging UI designed for young learners.",
     techStack: ["React", "Netlify", "Animation"],
-    highlights: ["Child-safe UI", "Interactive", "Accessible"],
+    highlights: ["Mobile-first design", "Interactive", "Accessible"],
     link: "https://skiddos-demo.netlify.app/",
     color: "#8330E3"
   },
@@ -51,7 +51,7 @@ export const ProjectData: Project[] = [
     title: "Library Manager",
     description: "Digital library management system with book cataloging, search, and user management features.",
     techStack: ["React", "Firebase", "Material UI"],
-    highlights: ["CRUD Operations", "Search/Filter", "User Roles"],
+    highlights: ["CRUD Operations", "Search/Filter", "Mobile-first design"],
     link: "https://library-management-1aefd.web.app/home",
     color: "#96CEB4"
   },

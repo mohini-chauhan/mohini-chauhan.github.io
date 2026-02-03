@@ -124,44 +124,48 @@ const TreemapChart: React.FC<TreemapChartProps> = ({ skillCategories, theme, cla
             whileHover={{ scale: 1.02, zIndex: 10 }}
           >
             <div
-              className="w-full h-full rounded-lg p-2.5 flex flex-col transition-all duration-200 shadow-sm group-hover:shadow-md"
+              className="w-full h-full rounded-lg p-2 flex flex-col transition-all duration-200 shadow-sm group-hover:shadow-md"
               style={{
                 backgroundColor: isDark
                   ? `${item.data.color}60`
                   : `${item.data.color}`,
                 border: `1px solid ${isDark ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.5)'}`,
               }}
+              title={`${item.data.label} (${item.data.proficiency}/10)\nSkills: ${item.data.techs.join(', ')}`}
             >
               {/* Category Label */}
-              <div className="flex items-center justify-between mb-1">
+              <div className="flex items-center justify-between gap-1 mb-1 min-w-0">
                 <span
-                  className="font-bold text-[11px] leading-tight truncate"
+                  className="font-bold text-[11px] leading-tight truncate min-w-0 flex-1"
                   style={{ color: isDark ? '#fff' : '#1a1a1a' }}
+                  title={item.data.label}
                 >
                   {item.data.label}
                 </span>
                 <span
-                  className="text-[9px] font-semibold px-1.5 py-0.5 rounded-full"
+                  className="text-[9px] font-semibold px-1 py-0.5 rounded-full shrink-0 whitespace-nowrap"
                   style={{
                     backgroundColor: isDark ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.6)',
                     color: isDark ? '#e5e7eb' : '#374151',
                   }}
+                  title={`Proficiency: ${item.data.proficiency}/10`}
                 >
                   {item.data.proficiency}/10
                 </span>
               </div>
 
               {/* Tech tags */}
-              <div className="flex flex-wrap gap-1 overflow-hidden flex-1 content-start">
+              <div className="flex flex-wrap gap-0.5 overflow-hidden flex-1 content-start">
                 {item.data.techs.map((tech) => (
                   <span
                     key={tech}
-                    className="px-1.5 py-0.5 text-[9px] rounded-md font-medium truncate"
+                    className="px-1 py-0.5 text-[8px] rounded font-medium truncate"
                     style={{
                       backgroundColor: isDark ? 'rgba(0,0,0,0.35)' : 'rgba(255,255,255,0.7)',
                       color: isDark ? '#f3f4f6' : '#1f2937',
                       maxWidth: '100%',
                     }}
+                    title={tech}
                   >
                     {tech}
                   </span>

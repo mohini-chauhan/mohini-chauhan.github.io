@@ -13,7 +13,7 @@ const skillCategories = [
   {
     label: 'Styling',
     proficiency: 9,
-    techs: ['Tailwind CSS', 'Sass/SCSS', 'CSS3', 'Framer Motion'],
+    techs: ['Tailwind CSS', 'Sass/SCSS', 'CSS3', 'Framer Motion', 'CVA', 'CLSX'],
     color: '#FF6B6B'
   },
   {
@@ -33,6 +33,12 @@ const skillCategories = [
     proficiency: 8,
     techs: ['React.memo', 'Code Splitting', 'Lazy Loading', 'Image Optimization'],
     color: '#96CEB4'
+  },
+  {
+    label: 'Build Tools',
+    proficiency: 8,
+    techs: ['Vite', 'Webpack', 'npm/yarn'],
+    color: '#E879F9'
   },
   {
     label: 'Data Visualization',
