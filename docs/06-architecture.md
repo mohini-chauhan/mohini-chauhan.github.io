@@ -78,7 +78,7 @@ tests/
 3. **Mode-driven scene.** `Experience` renders the room when mode is `intro`, `flyingToSeat`, `seated`, `flyingIn` or `flyingOut`, and the active diorama when mode is `diorama`. Switch while the fade overlay covers the screen.
 4. **Lazy dioramas.** `React.lazy` + `<Suspense>` inside the Canvas. Preload the next likely diorama on screen hover.
 5. **Canvas textures for live screens.** Port the painters from the prototype into small pure functions `(ctx, time, state) => void`. Redraw at about 15 fps, not every frame. Use drei `<Text>` for static 3D labels where it's simpler.
-6. **Classic view shares content, not components.** `/classic/` imports `portfolio.ts` and its own lightweight components. It must not import three, R3F or drei. size-limit enforces this.
+6. **Classic view shares content, not components.** `/classic/` imports `portfolio.ts` and its own lightweight components. It must not import three, R3F or drei. A build check in `vite.config.ts` (`noThreeInClassic`) enforces this.
 7. **No network assets at runtime** except the site's own files. Fonts are self-hosted; the environment map is generated in code.
 8. **WebGL fallback.** `lib/webgl.ts` checks for WebGL2 before mounting. If it's missing, redirect to `/classic/?reason=no-webgl`, and the Classic view shows a short note.
 
@@ -105,3 +105,4 @@ Record changes to any decision above here, with the date and the reason.
 | 2026-11-24 | Doc 08's `--launch` mode is `npm run test:launch` (sets `LAUNCH=1`) | Vitest has no custom CLI flags; an env var is the simplest switch |
 | 2026-11-24 | Vite 8 uses `build.rolldownOptions` instead of doc 09's `rollupOptions` | `rollupOptions` is deprecated in Vite 8 |
 | 2026-11-24 | Build in the user-site repo on branch `v2` instead of a new `portfolio` repo | Mohini's choice. Nothing to move at launch, and the live site deploys from `gh-pages`, so `v2` can't affect it |
+| 2026-11-24 | `noThreeInClassic` build check instead of size-limit for "no three.js in Classic" | It checks the classic page's module graph, so it holds however chunks are split. The e2e string check missed tree-shaken imports (A1 review point 3) |
