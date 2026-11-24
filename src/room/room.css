@@ -1,0 +1,11 @@
+/* The canvas fills the whole window, with no page scroll. */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  overflow: hidden;
+}

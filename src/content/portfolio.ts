@@ -5,6 +5,10 @@
  * Never hard-code content in components. If something is missing, add it here.
  *
  * Lines marked `TODO(mohini)` must be confirmed before launch.
+ *
+ * This file is plain data, so tests and build scripts can import it too.
+ * File paths are relative to the site base: use them as
+ * `${import.meta.env.BASE_URL}${path}` so a sub-path build still finds them.
  * See docs/11-open-questions.md for the full list.
  */
 
@@ -130,7 +134,7 @@ export const profile: Profile = {
   tagline: 'I build the tools product teams build on: shared packages, automation and checks that make everyone faster.',
   photo: {
     // TODO(mohini): replace with an original square photo, at least 512 × 512 px.
-    src: `${import.meta.env.BASE_URL}images/mohini-photo.jpg`,
+    src: 'images/mohini-photo.jpg',
     alt: 'Mohini Chauhan',
   },
   availability: { open: true, label: 'Open to work', modes: ['Remote', 'Full-time'] },
@@ -140,7 +144,7 @@ export const links: Links = {
   email: 'mailto:TODO@example.com', // TODO(mohini)
   linkedin: 'https://www.linkedin.com/in/TODO', // TODO(mohini)
   github: 'https://github.com/mohini-chauhan', // TODO(mohini): confirm
-  resumePdf: `${import.meta.env.BASE_URL}resume/mohini-chauhan-resume.pdf`,
+  resumePdf: 'resume/mohini-chauhan-resume.pdf',
 };
 
 export const stats: Stat[] = [
@@ -336,6 +340,7 @@ export const tour: TourStep[] = [
 
 /** Copy for the intro card, hints and other fixed UI text. */
 export const ui = {
+  canvasLabel: 'A 3D control room you can look around. Everything in it is something I’ve built or done.',
   intro: {
     heading: 'Welcome to my control room.',
     body: 'This is my portfolio as a 3D room. Everything in it is something I’ve built or done. Look around and click anything that lights up.',
