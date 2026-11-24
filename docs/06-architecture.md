@@ -106,3 +106,4 @@ Record changes to any decision above here, with the date and the reason.
 | 2026-11-24 | Vite 8 uses `build.rolldownOptions` instead of doc 09's `rollupOptions` | `rollupOptions` is deprecated in Vite 8 |
 | 2026-11-24 | Build in the user-site repo on branch `v2` instead of a new `portfolio` repo | Mohini's choice. Nothing to move at launch, and the live site deploys from `gh-pages`, so `v2` can't affect it |
 | 2026-11-24 | `noThreeInClassic` build check instead of size-limit for "no three.js in Classic" | It checks the classic page's module graph, so it holds however chunks are split. The e2e string check missed tree-shaken imports (A1 review point 3) |
+| 2026-11-24 | `build.chunkSizeWarningLimit` set to 1400 kB | three.js alone is over Vite's 500 kB default, so every build warned. 1400 kB minified is roughly doc 08's 380 KB gzip budget, so the warning now means something |

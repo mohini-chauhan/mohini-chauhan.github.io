@@ -35,7 +35,7 @@ Doc 13 lessons 1 to 7.
 - [ ] Desk segments and non-interactive props (keyboard, nameplate, mug, plant)
 - [ ] Camera states: intro drift, fly to seat, seated mouse look and touch look, portrait settings
 - [ ] Zustand store with the mode model (doc 05)
-- [ ] WebGL check and redirect
+- [x] WebGL check and redirect
 
 **Done when**: the room matches screenshot `02-tour-step-1.png` closely at 1440 × 900, looking around feels like the prototype, and phones get the portrait camera.
 

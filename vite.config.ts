@@ -36,6 +36,9 @@ export default defineConfig({
   base: process.env.VITE_BASE ?? '/',
   plugins: [react(), noThreeInClassic()],
   build: {
+    // three.js alone is over Vite's default 500 kB warning. 1400 kB minified is
+    // roughly doc 08's real budget (380 KB gzip), which size-limit enforces later.
+    chunkSizeWarningLimit: 1400,
     // Two pages: the 3D room and the Classic view (doc 06).
     rolldownOptions: { input: { main: 'index.html', classic: 'classic/index.html' } },
   },
