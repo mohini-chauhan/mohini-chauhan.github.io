@@ -1,0 +1,8 @@
+import reactHooks from 'eslint-plugin-react-hooks';
+import tseslint from 'typescript-eslint';
+
+export default tseslint.config(
+  { ignores: ['dist', 'reference', 'playwright-report', 'test-results', '.superpowers'] },
+  tseslint.configs.recommended,
+  reactHooks.configs.flat.recommended,
+);

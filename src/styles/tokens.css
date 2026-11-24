@@ -1,0 +1,27 @@
+/* Design tokens from docs/12-design-tokens.md. 3D colours live in src/room/scene/colors.ts. */
+:root {
+  --font: 'Albert Sans Variable', system-ui, sans-serif;
+
+  /* Colours: UI */
+  --bg: #0b1716;
+  --ink: #f2f5f3;
+  --ink-muted: #a9bdb8;
+  --ink-dark: #1a2a2a;
+  --ink-dark-muted: #4e625d;
+  --glass-dark: rgba(12, 26, 26, 0.74);
+  --glass-light: rgba(255, 255, 255, 0.88);
+  --glass-blur: 18px;
+  --line-dark: rgba(255, 255, 255, 0.14);
+  --line-light: rgba(0, 0, 0, 0.1);
+  --gold: #ffd27a;
+  --on-gold: #2a1e00;
+  --success: #1f8a5b;
+  --pending: #b7791f;
+  --fade: #f6f3ee;
+
+  /* Shape */
+  --radius-pill: 999px;
+  --radius-panel: 26px;
+  --radius-intro: 28px;
+  --radius-button: 14px;
+}
