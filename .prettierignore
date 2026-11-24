@@ -1,0 +1,6 @@
+docs
+reference
+*.md
+src/content/portfolio.ts
+dist
+.superpowers

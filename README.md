@@ -1,21 +1,15 @@
-# bun-react-tailwind-template
+# Mohini Chauhan · portfolio
 
-To install dependencies:
+My portfolio as a 3D control room you can explore in the browser, plus a fast Classic view.
 
-```bash
-bun install
+## Run it
+
+```sh
+nvm use      # Node 22, from .nvmrc
+npm ci
+npm run dev  # http://localhost:5173/ (room) and /classic/
 ```
 
-To start a development server:
+Checks: `npm run lint`, `npm run typecheck`, `npm run test`, `npm run test:e2e`.
 
-```bash
-bun dev
-```
-
-To run for production:
-
-```bash
-bun start
-```
-
-This project was created using `bun init` in bun v1.3.5. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+The full README, with screenshots and how it's built, comes in Phase 6.

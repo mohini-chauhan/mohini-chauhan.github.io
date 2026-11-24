@@ -1,0 +1,20 @@
+@import './tokens.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+}
+
+/* Visible focus ring on every control (doc 08). */
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+  /* Dark inner ring so focus stays visible on light panels and the light Classic theme. */
+  box-shadow: 0 0 0 3px var(--ink-dark);
+}
