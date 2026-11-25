@@ -58,7 +58,7 @@ Screenshots `09` to `17`, `23`.
 | Role | years label in role accent | role title; sub "{company}, {duration}" | Highlights (green tick list); for Intellect, "Projects from this role" with buttons that fly into each diorama | Close |
 | Toolbox | "Toolbox" violet | group name | Tools (chips); Where I used it (tick list, only if any) | Close |
 | Side project | "Side project" in accent | project name | Built with (chips); What it does (tick list) | Open the project (only if `url`), Close |
-| Stats | "My numbers" | "Six years in numbers" (match the stat) | 2 × 2 grid of stats in their accents; one line pointing to the badges | Close |
+| Stats | "My numbers" | "Seven years in numbers" (match the stat) | 2 × 2 grid of stats in their accents; one line pointing to the badges | Close |
 | Lighthouse | "At Intellect" green | "Lighthouse score 50 → 90" | One line telling them to watch the dial; Performance tools chips | Close. Opening it restarts the dial sweep. |
 | About | "About me" | name; sub title | Photo + bio; status chips (Open to work, Remote, Full-time) | Email me, LinkedIn |
 | Contact | "Say hello" amber | `ui.contact.heading` | Photo + `ui.contact.body` | Email me, LinkedIn, Download resume |
@@ -67,7 +67,7 @@ Screenshots `09` to `17`, `23`.
 
 ## Hotspot menu (keyboard and screen readers)
 
-The canvas can't be tabbed through, so add a visible "Jump to" button in the top bar (or reveal it on first Tab). It opens a menu listing every hotspot grouped by area: Projects (3 screens), Career (3 badges), Toolbox (8 units), Side projects (6), Desk (stats, Lighthouse, photo, resume, phone, hello, open to work).
+The canvas can't be tabbed through, so add a visible "Jump to" button in the top bar (or reveal it on first Tab). It opens a menu listing every hotspot grouped by area: Projects (3 screens), Career (3 badges), Toolbox (9 units), Side projects (6), Desk (stats, Lighthouse, photo, resume, phone, hello, open to work).
 
 - Choosing an item turns the camera to face the object (ease to a yaw and pitch you compute from its position), then opens its panel or diorama.
 - The menu is a real list of buttons with arrow-key navigation and Esc to close.

@@ -39,7 +39,7 @@ Every object below is a **hotspot** unless marked otherwise. Hotspot behaviour (
 | **Career board** (not a hotspot) | right wall, centre (8.8, 3.35, −0.2), facing −X, cork 5.1 × 3.0 in a dark frame, sticky note "My career, 2019 to now" | — | — | — |
 | **Career badges × 3** | pinned on the board at local x = −1.55, 0, 1.55, hanging on two lanyard straps. Badge 1.12 × 1.56: accent header with company, round photo, name, role title, years label. | career | Role panel | "Career: {company}" |
 | **Toolbox rack** | floor-standing at (−7.6, 0, −2.6), rotated y +0.8, 1.9 × 4.5 × 1.15, dark metal. Label "Toolbox". | — | — | — |
-| **Toolbox units × 8** | one per `skillGroups` entry, stacked from y = 0.5, 0.44 apart, each 1.6 × 0.38 with a coloured stripe, the group name and three blinking LEDs in its accent | toolbox | Skill panel | "Toolbox: {name}" |
+| **Toolbox units × 9** | one per `skillGroups` entry, stacked from y = 0.5, 0.44 apart (lesson 11 tightens the spacing or raises the rack so the 9th unit clears the "Toolbox" label at y 4.2), each 1.6 × 0.38 with a coloured stripe, the group name and three blinking LEDs in its accent | toolbox | Skill panel | "Toolbox: {name}" |
 | **Side project shelf** | under the window, (−8.4, 0, 1.6), facing +X, 5.3 × 1.05 × 0.8 wood. Label "Side projects". | — | — | — |
 | **Side project boxes × 6** | on the shelf, 0.84 apart, each 0.64 × 0.86 × 0.22 in the project's accent with its name and tags on the front | side | Side project panel | "Side project: {name}" |
 
