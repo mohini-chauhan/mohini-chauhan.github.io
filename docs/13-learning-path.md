@@ -107,38 +107,34 @@ Most of Phase 5's performance and accessibility work is already built into the l
 These make the site prove its own claims. Both depend on Phase 6's CI being in place. Whether to do them is decided after Part E. The PR-per-lesson setup keeps them possible either way.
 
 - **F1 · Real numbers from this repo.** Shown **next to** the Intellect claims, never in place of them. The dial keeps "At Intellect, 50 → 90", and the PR-checks diorama keeps modelling her Intellect project with its buttons and sample data. A separate, clearly labelled "This site's own checks" readout (in the Lighthouse and PR-checks panels) shows this repo's real bundle size and Lighthouse score. Data is written to a JSON file at build time, so there are no runtime network calls (doc 06, decision 7). *(My call, so the meaning of no claim changes, per doc 02.)*
+- **F3 · "Check your own PR"** *(Mohini's idea, 25 Nov 2026)*. Visitors give a PR and see its metrics. To be brainstormed on its own after A2. Limits: a browser can't build someone else's code, doc 06 decision 7 forbids runtime network calls, and GitHub limits anonymous requests. A reusable GitHub Action, written from scratch, is one option.
 - **F2 · "How this site was built".** A notebook on the desk opens a panel that shows the spec → plan → lessons → PRs story and links to `docs/` in the repo. It backs the "AI-first, spec-driven" line on her resume. Needs the repo to be public (Q12).
 
 ## Content changes (step A2)
 
-`portfolio.ts` disagrees with Mohini's May 2026 resume (`~/Documents/Personal/bun_test/Mohini_Chauhan_Resume.md`):
+A2 checked `portfolio.ts` line by line against Mohini's latest resume (the PDF in `public/resume/`, updated 24 Nov 2026). Mohini decided each row on 24 and 25 Nov 2026:
 
-| Item | `portfolio.ts` | Resume |
+| Item | Was | Now |
 |---|---|---|
-| Onboarding result | 45 days → 15 days | nearly a month → about 2 weeks (≈50%). **Settled 24 Nov 2026: 45 → 15 is correct.** The site keeps it as is; the resume line should be updated to match (45 → 15 is a 67% cut, not ≈50%). |
-| Video package result | about a month → a few weeks | integration time cut by 80%, used in 5+ repos |
-| First company | IT company, Jan 2019 to Oct 2021 | Confidential (NDA), Jan 2019 to Dec 2021 |
-| HCL | Software Engineer, Oct 2021 to Mar 2023 | Senior Software Engineer, Dec 2021 to Apr 2023 |
-| Intellect start | Mar 2023 | Apr 2023 |
-| Apps built | 20+ | 10+ |
-| Component library | 60% faster dev cycles | 2 weeks → 5 days |
-| LinkedIn | TODO | linkedin.com/in/mohinii |
-| Years of experience (Q3) | 6+ | 6+, but Jan 2019 to now is nearly 8 years. **Settled 24 Nov 2026: 7+.** Also change the stats panel heading to "Seven years in numbers" (doc 05) and Q3's answer in doc 11. |
-| People led | 5+ people led | mentored 5 (HCL) and mentored juniors (Intellect). **Settled 24 Nov 2026: "5+ people mentored".** |
-| "Ship 15+ enterprise features a year" (Intellect) | present | not on the resume. **Settled 24 Nov 2026: drop it.** |
-| PR checks: what they do | bundle size, unused assets | also dead code and build time, posted as PR comments |
+| Email, LinkedIn, GitHub (Q5) | TODO | `chauhanmohinii18@gmail.com`, `linkedin.com/in/mohinii`, `github.com/mohini-chauhan` |
+| Years of experience (Q3) | 6+ | 7+. The stats panel heading is "Seven years in numbers" (doc 05). |
+| Apps built | 20+ | 10+ (stat and first-company highlight) |
+| People | 5+ people led | 5+ people mentored |
+| First company (Q4) | IT company | Still "IT company" |
+| Dates (Q2) | to Oct 2021; Oct 2021 to Mar 2023; from Mar 2023 | Jan 2019 to Dec 2021; Dec 2021 to Apr 2023; from Apr 2023 |
+| HCL title | Software Engineer | Senior Software Engineer |
+| Component library | 60% faster dev cycles | New features in 5 days, not 2 weeks |
+| Intellect highlights | 2 to 3 projects; Lighthouse; 15+ features a year | Tech lead on 3+ projects serving 100K+ users; Lighthouse 50 to 90; whole platform moved to Tailwind CSS; automated test coverage 50% to 80%+; design system adopted across teams, 25% faster delivery. "15+ features a year" is dropped (a 2025 number). |
+| Video package result | About a month → a few weeks | Integration time cut by 80%, used in 5+ repos |
+| Onboarding result | 45 days → 15 days | Unchanged (settled 24 Nov 2026) |
+| PR checks | Bundle size and unused assets; "Every PR, checked automatically" | Bundle size, build time, unused files and dead code (knip), posted as a PR comment. Result: "Unused files: 400+ → 12". |
+| Toolbox | 8 groups | Adds Playwright (Testing), Redux-Saga and TanStack Query (State), knip (Build tools) and a 9th group, Observability (Sentry, Mixpanel, Core Web Vitals). Lesson 11 makes room for the 9th unit on the rack (doc 03). Tools not on the resume stay: Mohini can explain them. |
 
-A2 is a full line-by-line check of `portfolio.ts` against the resume. The table above is what that check found on 24 November 2026; any row found later goes to Mohini the same way. `durationLabel` is computed from `start` and `end` instead of hard-coded, so it never goes stale. *(My call.)*
+- Role durations are computed from `start` and `end` by `formatDuration` (`src/lib/format.ts`), so they never go stale.
+- Never name Mohini's Intellect projects or internal tools.
+- Dropped from the earlier gap list, because the latest resume doesn't have them: billing and account setup automation, and "end-to-end ownership" in the bio.
 
-Mohini decides which value is true for each row. Then `portfolio.ts`, the diorama copy (onboarding board "Day N" and "45/15" labels, doc 04) and the screen painters (doc 03) are updated to match, and `docs/11-open-questions.md` is updated for Q2, Q4 and Q5.
-
-Gaps to fill, wording to be approved by Mohini (doc 02 says ask before rewording):
-- Testing group `usedIn`: Playwright end-to-end suites, 85% coverage. Add Playwright to its tools.
-- A new skill group "Observability": Sentry, Core Web Vitals, Mixpanel. This adds a 9th toolbox unit. The rack in doc 03 fits 8 (a 9th at y 4.02 would hit the "Toolbox" label at y 4.2), so the builder adjusts unit spacing or rack height in lesson 11 and updates doc 03.
-- State management tools: add TanStack Query and Redux-Saga, which are on the resume.
-- Billing and account setup automation, folded into the onboarding project (its "Setup" gate).
-- Design system adopted across teams, +25% delivery speed, as an Intellect highlight.
-- End-to-end ownership of whole journeys, which her resume leads with, reflected in the bio or tagline.
+**Resume follow-ups for Mohini** (the site is now ahead of the resume): 7+ years, the onboarding project (45 → 15 days), and the 2026 work (Tailwind migration, test coverage 50% to 80%+, unused files 400+ to 12).
 
 ## Open decisions for Mohini
 
@@ -146,7 +142,7 @@ Until answered, use the default (AGENTS.md: don't block).
 
 | # | Decision | Default until answered |
 |---|---|---|
-| 1 | Which value is true for each remaining row in the content table (onboarding is settled). Asked again at the start of A2, row by row, since the onboarding answer shows the resume isn't right everywhere. | Keep `portfolio.ts` as is, rows stay `TODO(mohini)` |
+| 1 | ~~Which value is true for each content row.~~ **Settled 24 and 25 Nov 2026** (see "Content changes"). | — |
 | 2 | ~~Whether to name the internal tools.~~ **Settled 24 Nov 2026:** never name them. Call them the video SDK package and the chat SDK package. | — |
 | 3 | ~~Whether there's a date something must be live by.~~ **Settled 24 Nov 2026:** keep the old site live until the new one launches. No early release. | — |
 | 4 | After Part E: whether to do the extras in Part F. | Decide then |

@@ -49,12 +49,10 @@ export interface Role {
   title: string;
   /** ISO year-month, e.g. "2023-03". */
   start: string;
-  /** ISO year-month, or null for the current role. */
+  /** ISO year-month, or null for the current role. Panels show the duration with formatDuration(start, end, now). */
   end: string | null;
   /** Shown on the badge and in panels, e.g. "2023 to now". */
   yearsLabel: string;
-  /** Shown in panels, e.g. "3 years 8 months". */
-  durationLabel: string;
   accent: Hex;
   /** Dark text colour to use on top of `accent`. */
   onAccent: Hex;
@@ -141,46 +139,43 @@ export const profile: Profile = {
 };
 
 export const links: Links = {
-  email: 'mailto:TODO@example.com', // TODO(mohini)
-  linkedin: 'https://www.linkedin.com/in/TODO', // TODO(mohini)
-  github: 'https://github.com/mohini-chauhan', // TODO(mohini): confirm
+  email: 'mailto:chauhanmohinii18@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/mohinii',
+  github: 'https://github.com/mohini-chauhan',
   resumePdf: 'resume/mohini-chauhan-resume.pdf',
 };
 
 export const stats: Stat[] = [
-  // TODO(mohini): the timeline starts in early 2019, so "7+" may now be accurate.
-  { id: 'years', value: '6+', label: 'years of experience', accent: '#F5C04A' },
+  { id: 'years', value: '7+', label: 'years of experience', accent: '#F5C04A' },
   { id: 'users', value: '100K+', label: 'users served', accent: '#F07A7A' },
-  { id: 'apps', value: '20+', label: 'apps built', accent: '#5CC9BA' },
-  { id: 'led', value: '5+', label: 'people led', accent: '#B28CFF' },
+  { id: 'apps', value: '10+', label: 'apps built', accent: '#5CC9BA' },
+  { id: 'mentored', value: '5+', label: 'people mentored', accent: '#B28CFF' },
 ];
 
 export const roles: Role[] = [
   {
     id: 'it-company',
-    company: 'IT company', // TODO(mohini): real company name, or keep it anonymous
+    company: 'IT company',
     title: 'Frontend Developer',
-    start: '2019-01', // TODO(mohini): confirm
-    end: '2021-10', // TODO(mohini): confirm
+    start: '2019-01',
+    end: '2021-12',
     yearsLabel: '2019 to 2021',
-    durationLabel: 'About 3 years',
     accent: '#F5C04A',
     onAccent: '#3A2A00',
     highlights: [
-      'Built 20+ responsive apps with cross-browser performance',
+      'Built 10+ responsive apps with cross-browser performance',
       'Apps served 50K+ daily users with 99.9% uptime',
-      'Built a 40+ component library that made dev cycles 60% faster',
+      'Built a 40+ component library: new features in 5 days, not 2 weeks',
     ],
     workProjectIds: [],
   },
   {
     id: 'hcl',
     company: 'HCL Technologies',
-    title: 'Software Engineer',
-    start: '2021-10', // TODO(mohini): confirm
-    end: '2023-03', // TODO(mohini): confirm
+    title: 'Senior Software Engineer',
+    start: '2021-12',
+    end: '2023-04',
     yearsLabel: '2021 to 2023',
-    durationLabel: '1 year 5 months',
     accent: '#F07A7A',
     onAccent: '#FFFFFF',
     highlights: [
@@ -194,16 +189,17 @@ export const roles: Role[] = [
     id: 'intellect',
     company: 'Intellect',
     title: 'Senior Software Engineer',
-    start: '2023-03', // TODO(mohini): confirm
+    start: '2023-04',
     end: null,
     yearsLabel: '2023 to now',
-    durationLabel: '3 years 8 months',
     accent: '#5CC9BA',
     onAccent: '#063A33',
     highlights: [
-      'Tech lead for 2 to 3 projects serving 100K+ users',
+      'Tech lead on 3+ projects serving 100K+ users',
       'Raised the Lighthouse score from 50 to 90',
-      'Ship 15+ enterprise features a year',
+      'Moved the whole platform to Tailwind CSS, replacing mixed styling',
+      'Raised automated test coverage from 50% to 80%+',
+      'Built a design system adopted across teams: 25% faster feature delivery',
     ],
     // TODO(mohini): confirm all three work projects were built at Intellect.
     workProjectIds: ['video-package', 'provider-onboarding', 'pr-checks'],
@@ -222,7 +218,7 @@ export const workProjects: WorkProject[] = [
       'Apps used several video SDKs, each with its own factory methods. Call code was copied across repos, call states and errors were handled differently everywhere, and adding video to a new app took about a month.',
     built:
       'A private GitHub package that puts every SDK behind one hook. Apps pass a few props, and the hook picks the SDK and runs the whole session: lifecycle, error handling, screen share, recording and a network test. I did the same for chat.',
-    result: 'About a month → a few weeks',
+    result: 'Integration time cut by 80%, used in 5+ repos',
     actions: [
       {
         id: 'switch-provider',
@@ -267,10 +263,10 @@ export const workProjects: WorkProject[] = [
     accent: '#7C8CFF',
     accentStrong: '#5C6CF0',
     problem:
-      'Nothing checked bundle size or unused assets automatically, so problems were easy to miss in review.',
+      'Nothing checked bundle size, unused files or dead code automatically, so problems were easy to miss in review.',
     built:
-      'Scripts that run whenever a PR is raised. They measure bundle size, find unused assets and flag problems before anyone starts reviewing.',
-    result: 'Every PR, checked automatically',
+      'Scripts that run whenever a PR is raised. They measure bundle size and build time, find unused files and dead code with knip, and post the results as a comment on the PR before anyone starts reviewing.',
+    result: 'Unused files: 400+ → 12',
     actions: [
       { id: 'send-clean-pr', label: 'Send a clean PR', status: 'A clean PR is on its way to the gate.' },
       {
@@ -284,7 +280,13 @@ export const workProjects: WorkProject[] = [
 ];
 
 export const skillGroups: SkillGroup[] = [
-  { id: 'styling', name: 'Styling', tools: ['Tailwind CSS', 'Sass/SCSS', 'CSS3', 'Framer Motion', 'CVA', 'CLSX'], usedIn: [], accent: '#F07A7A' },
+  {
+    id: 'styling',
+    name: 'Styling',
+    tools: ['Tailwind CSS', 'Sass/SCSS', 'CSS3', 'Framer Motion', 'CVA', 'CLSX'],
+    usedIn: ['Moved the whole platform at Intellect to Tailwind CSS'],
+    accent: '#F07A7A',
+  },
   {
     id: 'components',
     name: 'Component design',
@@ -302,11 +304,17 @@ export const skillGroups: SkillGroup[] = [
   {
     id: 'state',
     name: 'State management',
-    tools: ['React hooks', 'Custom hooks', 'Context API', 'Redux'],
+    tools: ['React hooks', 'Custom hooks', 'Context API', 'Redux', 'Redux-Saga', 'TanStack Query'],
     usedIn: ['One hook that runs the whole video session lifecycle'],
     accent: '#5CC9BA',
   },
-  { id: 'build', name: 'Build tools', tools: ['Vite', 'Webpack', 'npm/yarn'], usedIn: ['Bundle size checks on every pull request'], accent: '#C98BF0' },
+  {
+    id: 'build',
+    name: 'Build tools',
+    tools: ['Vite', 'Webpack', 'npm/yarn', 'knip'],
+    usedIn: ['Bundle size checks on every pull request', 'Unused files cut from 400+ to 12 with knip'],
+    accent: '#C98BF0',
+  },
   {
     id: 'version-control',
     name: 'Version control',
@@ -314,8 +322,18 @@ export const skillGroups: SkillGroup[] = [
     usedIn: ['A private GitHub package for video and chat', 'Scripts that run when a pull request is raised'],
     accent: '#F5C04A',
   },
-  { id: 'testing', name: 'Testing', tools: ['Jest', 'React Testing Library'], usedIn: [], accent: '#8E6CF0' },
+  {
+    id: 'testing',
+    name: 'Testing',
+    tools: ['Jest', 'React Testing Library', 'Playwright'],
+    usedIn: [
+      'Raised automated test coverage from 50% to 80%+ at Intellect',
+      'A README coverage report, so anyone can see which features are tested and how much',
+    ],
+    accent: '#8E6CF0',
+  },
   { id: 'dataviz', name: 'Data visualization', tools: ['Chart.js', 'React Chart.js 2'], usedIn: [], accent: '#6BB8E0' },
+  { id: 'observability', name: 'Observability', tools: ['Sentry', 'Mixpanel', 'Core Web Vitals'], usedIn: [], accent: '#E58FC1' },
 ];
 
 export const sideProjects: SideProject[] = [

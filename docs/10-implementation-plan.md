@@ -100,7 +100,7 @@ Mohini chose to handle these at the end.
 - [ ] Darken `--success` and `--pending` so status text passes AA on `--glass-light`
 - [ ] `.prettierignore`: add `mohini-prototypes-v2`, `.claude` and `public`; format `playwright.config.ts` and `portfolio.test.ts`; run `prettier --check` in CI
 - [ ] Content test: check that `lighthouse.roleId` resolves
-- [ ] Compute `durationLabel` from `start` and `end` (also planned in A2)
+- [x] Compute role durations from `start` and `end` (done in A2: `formatDuration`)
 - [ ] Add a `sampleDataNote` to the video package demo (providers A, B and C are sample names)
 - [ ] Split `tsconfig.json` into browser (`vite/client`) and Node configs
 - [ ] Bring `CLAUDE.md`, `.github/copilot-instructions.md`, `START-HERE.md` and doc 13 in line with stopping per lesson and the gitignored `reference/`
